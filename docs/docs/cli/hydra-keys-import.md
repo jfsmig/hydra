@@ -21,7 +21,7 @@ Imports cryptographic keys of any format to the JSON Web Key Store
 This command allows you to import cryptographic keys to the JSON Web Key Store.
 
 Currently supported formats are raw JSON Web Keys or PEM/DER encoded data. If
-the JSON Web Key Set exists already, the imported keys will be added to that
+the JSON Web Key MustSet exists already, the imported keys will be added to that
 set. Otherwise, a new set will be created.
 
 Please be aware that importing a private key does not automatically import its
@@ -44,8 +44,8 @@ hydra keys import <set> <file-1> [<file-2> [<file-3 [<...>]]] [flags]
 ### Options inherited from parent commands
 
 ```
-      --access-token string    Set an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN
-      --endpoint string        Set the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL
+      --access-token string    MustSet an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN
+      --endpoint string        MustSet the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL
       --fail-after duration    Stop retrying after the specified duration (default 1m0s)
       --fake-tls-termination   fake tls termination by adding "X-Forwarded-Proto: https" to http headers
       --skip-tls-verify        Foolishly accept TLS certificates signed by unknown certificate authorities

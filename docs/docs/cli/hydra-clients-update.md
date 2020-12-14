@@ -43,7 +43,7 @@ hydra clients update <id> [flags]
       --client-uri string                   A URL string of a web page providing information about the client
   -g, --grant-types strings                 A list of allowed grant types (default [authorization_code])
   -h, --help                                help for update
-      --jwks-uri string                     Define the URL where the JSON Web Key Set should be fetched from when performing the "private_key_jwt" client authentication method
+      --jwks-uri string                     Define the URL where the JSON Web Key MustSet should be fetched from when performing the "private_key_jwt" client authentication method
       --keybase string                      Keybase username for encrypting client secret
       --logo-uri string                     A URL string that references a logo for the client
   -n, --name string                         The client's name
@@ -62,8 +62,8 @@ hydra clients update <id> [flags]
 ### Options inherited from parent commands
 
 ```
-      --access-token string    Set an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN
-      --endpoint string        Set the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL. A unix socket can be set in the form unix:///path/to/socket
+      --access-token string    MustSet an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN
+      --endpoint string        MustSet the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL. A unix socket can be set in the form unix:///path/to/socket
       --fail-after duration    Stop retrying after the specified duration (default 1m0s)
       --fake-tls-termination   Fake tls termination by adding "X-Forwarded-Proto: https" to http headers
       --skip-tls-verify        Foolishly accept TLS certificates signed by unknown certificate authorities

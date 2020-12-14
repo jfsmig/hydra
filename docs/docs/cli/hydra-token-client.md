@@ -34,7 +34,7 @@ hydra token client [flags]
       --audience strings       Request a specific OAuth 2.0 Access Token Audience
       --client-id string       Use the provided OAuth 2.0 Client ID, defaults to environment variable OAUTH2_CLIENT_ID
       --client-secret string   Use the provided OAuth 2.0 Client Secret, defaults to environment variable OAUTH2_CLIENT_SECRET
-      --endpoint string        Set the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_URL
+      --endpoint string        MustSet the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_URL
   -h, --help                   help for client
       --scope strings          OAuth2 scope to request
   -v, --verbose                Toggle verbose output mode

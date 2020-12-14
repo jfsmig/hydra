@@ -25,8 +25,8 @@ hydra token flush [flags]
 ### Options
 
 ```
-      --access-token string   Set an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN
-      --endpoint string       Set the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL
+      --access-token string   MustSet an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN
+      --endpoint string       MustSet the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL
   -h, --help                  help for flush
       --min-age duration      Skip removing tokens which do not satisfy the minimum age (1s, 1m, 1h)
 ```

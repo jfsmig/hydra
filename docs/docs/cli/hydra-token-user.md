@@ -36,13 +36,13 @@ hydra token user [flags]
       --auth-url endpoint      Usually it is enough to specify the endpoint flag, but if you want to force the authorization url, use this flag
       --client-id string       Use the provided OAuth 2.0 Client ID, defaults to environment variable OAUTH2_CLIENT_ID
       --client-secret string   Use the provided OAuth 2.0 Client Secret, defaults to environment variable OAUTH2_CLIENT_SECRET
-      --endpoint string        Set the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_URL
+      --endpoint string        MustSet the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_URL
   -h, --help                   help for user
       --https                  Sets up HTTPS for the endpoint using a self-signed certificate which is re-generated every time you start this command
-      --max-age int            Set the OpenID Connect max_age parameter
+      --max-age int            MustSet the OpenID Connect max_age parameter
       --no-open                Do not open the browser window automatically
   -p, --port int               The port on which the server should run (default 4446)
-      --prompt strings         Set the OpenID Connect prompt parameter
+      --prompt strings         MustSet the OpenID Connect prompt parameter
       --redirect string        Force a redirect url
       --scope strings          Request OAuth2 scope (default [offline,openid])
       --token-url endpoint     Usually it is enough to specify the endpoint flag, but if you want to force the token url, use this flag

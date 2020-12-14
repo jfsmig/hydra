@@ -1,7 +1,7 @@
 ---
 id: hydra-keys-create
 title: hydra keys create
-description: hydra keys create Create a new JSON Web Key Set
+description: hydra keys create Create a new JSON Web Key MustSet
 ---
 
 <!--
@@ -12,11 +12,11 @@ To improve this file please make your change against the appropriate "./cmd/*.go
 
 ## hydra keys create
 
-Create a new JSON Web Key Set
+Create a new JSON Web Key MustSet
 
 ### Synopsis
 
-Create a new JSON Web Key Set
+Create a new JSON Web Key MustSet
 
 ```
 hydra keys create <set> <key> [flags]
@@ -33,8 +33,8 @@ hydra keys create <set> <key> [flags]
 ### Options inherited from parent commands
 
 ```
-      --access-token string    Set an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN
-      --endpoint string        Set the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL
+      --access-token string    MustSet an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN
+      --endpoint string        MustSet the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL
       --fail-after duration    Stop retrying after the specified duration (default 1m0s)
       --fake-tls-termination   fake tls termination by adding "X-Forwarded-Proto: https" to http headers
       --skip-tls-verify        Foolishly accept TLS certificates signed by unknown certificate authorities
