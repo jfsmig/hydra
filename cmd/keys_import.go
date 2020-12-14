@@ -24,7 +24,7 @@ var keysImportCmd = &cobra.Command{
 	Short: "Imports cryptographic keys of any format to the JSON Web Key Store",
 	Long: `This command allows you to import cryptographic keys to the JSON Web Key Store.
 
-Currently supported formats are raw JSON Web Keys or PEM/DER encoded data. If the JSON Web Key Set exists already,
+Currently supported formats are raw JSON Web Keys or PEM/DER encoded data. If the JSON Web Key MustSet exists already,
 the imported keys will be added to that set. Otherwise, a new set will be created.
 
 Please be aware that importing a private key does not automatically import its public key as well.

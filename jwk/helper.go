@@ -59,7 +59,7 @@ func AsymmetricKeypair(ctx context.Context, r InternalRegistry, g KeyGenerator, 
 func GetOrCreateKey(ctx context.Context, r InternalRegistry, g KeyGenerator, set, prefix string) (*jose.JSONWebKey, error) {
 	keys, err := r.KeyManager().GetKeySet(ctx, set)
 	if errors.Is(err, x.ErrNotFound) || keys != nil && len(keys.Keys) == 0 {
-		r.Logger().Warnf("JSON Web Key Set \"%s\" does not exist yet, generating new key pair...", set)
+		r.Logger().Warnf("JSON Web Key MustSet \"%s\" does not exist yet, generating new key pair...", set)
 		keys, err = createKey(ctx, r, g, set)
 		if err != nil {
 			return nil, err
@@ -70,7 +70,7 @@ func GetOrCreateKey(ctx context.Context, r InternalRegistry, g KeyGenerator, set
 
 	key, err := FindKeyByPrefix(keys, prefix)
 	if err != nil {
-		r.Logger().Warnf("JSON Web Key with prefix %s not found in JSON Web Key Set %s, generating new key pair...", prefix, set)
+		r.Logger().Warnf("JSON Web Key with prefix %s not found in JSON Web Key MustSet %s, generating new key pair...", prefix, set)
 
 		keys, err = createKey(ctx, r, g, set)
 		if err != nil {
@@ -89,7 +89,7 @@ func GetOrCreateKey(ctx context.Context, r InternalRegistry, g KeyGenerator, set
 func createKey(ctx context.Context, r InternalRegistry, g KeyGenerator, set string) (*jose.JSONWebKeySet, error) {
 	keys, err := g.Generate(uuid.New(), "sig")
 	if err != nil {
-		return nil, errors.Wrapf(err, "Could not generate JSON Web Key Set \"%s\".", set)
+		return nil, errors.Wrapf(err, "Could not generate JSON Web Key MustSet \"%s\".", set)
 	}
 
 	for i, k := range keys.Keys {
@@ -98,7 +98,7 @@ func createKey(ctx context.Context, r InternalRegistry, g KeyGenerator, set stri
 	}
 
 	if err = r.KeyManager().AddKeySet(ctx, set, keys); err != nil {
-		return nil, errors.Wrapf(err, "Could not persist JSON Web Key Set \"%s\".", set)
+		return nil, errors.Wrapf(err, "Could not persist JSON Web Key MustSet \"%s\".", set)
 	}
 
 	return keys, nil
@@ -130,7 +130,7 @@ func FindKeysByPrefix(set *jose.JSONWebKeySet, prefix string) (*jose.JSONWebKeyS
 	}
 
 	if len(keys.Keys) == 0 {
-		return nil, errors.Errorf("Unable to find key with prefix %s in JSON Web Key Set", prefix)
+		return nil, errors.Errorf("Unable to find key with prefix %s in JSON Web Key MustSet", prefix)
 	}
 
 	return keys, nil

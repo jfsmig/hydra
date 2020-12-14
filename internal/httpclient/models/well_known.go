@@ -63,10 +63,10 @@ type WellKnown struct {
 	// Required: true
 	Issuer *string `json:"issuer"`
 
-	// URL of the OP's JSON Web Key Set [JWK] document. This contains the signing key(s) the RP uses to validate
-	// signatures from the OP. The JWK Set MAY also contain the Server's encryption key(s), which are used by RPs
+	// URL of the OP's JSON Web Key MustSet [JWK] document. This contains the signing key(s) the RP uses to validate
+	// signatures from the OP. The JWK MustSet MAY also contain the Server's encryption key(s), which are used by RPs
 	// to encrypt requests to the Server. When both signing and encryption keys are made available, a use (Key Use)
-	// parameter value is REQUIRED for all keys in the referenced JWK Set to indicate each key's intended usage.
+	// parameter value is REQUIRED for all keys in the referenced JWK MustSet to indicate each key's intended usage.
 	// Although some algorithms allow the same key to be used for both signatures and encryption, doing so is
 	// NOT RECOMMENDED, as it is less secure. The JWK x5c parameter MAY be used to provide X.509 representations of
 	// keys provided. When used, the bare key values MUST still be present and MUST match those in the certificate.

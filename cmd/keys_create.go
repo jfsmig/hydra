@@ -27,7 +27,7 @@ import (
 // createCmd represents the create command
 var keysCreateCmd = &cobra.Command{
 	Use:   "create <set> <key>",
-	Short: "Create a new JSON Web Key Set",
+	Short: "Create a new JSON Web Key MustSet",
 	Run:   cmdHandler.Keys.CreateKeys,
 }
 

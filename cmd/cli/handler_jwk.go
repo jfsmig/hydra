@@ -162,7 +162,7 @@ func (h *JWKHandler) ImportKeys(cmd *cobra.Command, args []string) {
 	cmdx.CheckResponse(err, http.StatusOK, response)
 	defer response.Body.Close()
 
-	fmt.Println("JSON Web Key Set successfully imported!")
+	fmt.Println("JSON Web Key MustSet successfully imported!")
 }
 
 func (h *JWKHandler) GetKeys(cmd *cobra.Command, args []string) {
@@ -180,5 +180,5 @@ func (h *JWKHandler) DeleteKeys(cmd *cobra.Command, args []string) {
 
 	_, err := m.Admin.DeleteJSONWebKeySet(admin.NewDeleteJSONWebKeySetParams().WithSet(args[0]))
 	cmdx.Must(err, "The request failed with the following error message:\n%s", formatSwaggerError(err))
-	fmt.Printf("JSON Web Key Set deleted: %s\n", args[0])
+	fmt.Printf("JSON Web Key MustSet deleted: %s\n", args[0])
 }

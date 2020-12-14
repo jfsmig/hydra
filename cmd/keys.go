@@ -38,7 +38,7 @@ func init() {
 	//keysCmd.PersistentFlags().Bool("dry", false, "do not execute the command but show the corresponding curl command instead")
 	keysCmd.PersistentFlags().Bool("fake-tls-termination", false, `fake tls termination by adding "X-Forwarded-Proto: https" to http headers`)
 	keysCmd.PersistentFlags().Duration("fail-after", time.Minute, `Stop retrying after the specified duration`)
-	keysCmd.PersistentFlags().String("access-token", os.Getenv("OAUTH2_ACCESS_TOKEN"), "Set an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN")
-	keysCmd.PersistentFlags().String("endpoint", os.Getenv("HYDRA_ADMIN_URL"), "Set the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL")
+	keysCmd.PersistentFlags().String("access-token", os.Getenv("OAUTH2_ACCESS_TOKEN"), "MustSet an access token to be used in the Authorization header, defaults to environment variable OAUTH2_ACCESS_TOKEN")
+	keysCmd.PersistentFlags().String("endpoint", os.Getenv("HYDRA_ADMIN_URL"), "MustSet the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_ADMIN_URL")
 	keysCmd.PersistentFlags().Bool("skip-tls-verify", false, "Foolishly accept TLS certificates signed by unknown certificate authorities")
 }

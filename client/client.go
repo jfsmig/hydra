@@ -126,20 +126,20 @@ type Client struct {
 	// file with a single JSON array of redirect_uri values.
 	SectorIdentifierURI string `json:"sector_identifier_uri,omitempty" db:"sector_identifier_uri"`
 
-	// URL for the Client's JSON Web Key Set [JWK] document. If the Client signs requests to the Server, it contains
-	// the signing key(s) the Server uses to validate signatures from the Client. The JWK Set MAY also contain the
+	// URL for the Client's JSON Web Key MustSet [JWK] document. If the Client signs requests to the Server, it contains
+	// the signing key(s) the Server uses to validate signatures from the Client. The JWK MustSet MAY also contain the
 	// Client's encryption keys(s), which are used by the Server to encrypt responses to the Client. When both signing
 	// and encryption keys are made available, a use (Key Use) parameter value is REQUIRED for all keys in the referenced
-	// JWK Set to indicate each key's intended usage. Although some algorithms allow the same key to be used for both
+	// JWK MustSet to indicate each key's intended usage. Although some algorithms allow the same key to be used for both
 	// signatures and encryption, doing so is NOT RECOMMENDED, as it is less secure. The JWK x5c parameter MAY be used
 	// to provide X.509 representations of keys provided. When used, the bare key values MUST still be present and MUST
 	// match those in the certificate.
 	JSONWebKeysURI string `json:"jwks_uri,omitempty" db:"jwks_uri"`
 
-	// Client's JSON Web Key Set [JWK] document, passed by value. The semantics of the jwks parameter are the same as
-	// the jwks_uri parameter, other than that the JWK Set is passed by value, rather than by reference. This parameter
+	// Client's JSON Web Key MustSet [JWK] document, passed by value. The semantics of the jwks parameter are the same as
+	// the jwks_uri parameter, other than that the JWK MustSet is passed by value, rather than by reference. This parameter
 	// is intended only to be used by Clients that, for some reason, are unable to use the jwks_uri parameter, for
-	// instance, by native applications that might not have a location to host the contents of the JWK Set. If a Client
+	// instance, by native applications that might not have a location to host the contents of the JWK MustSet. If a Client
 	// can use jwks_uri, it MUST NOT use jwks. One significant downside of jwks is that it does not enable key rotation
 	// (which jwks_uri does, as described in Section 10 of OpenID Connect Core 1.0 [OpenID.Core]). The jwks_uri and jwks
 	// parameters MUST NOT be used together.

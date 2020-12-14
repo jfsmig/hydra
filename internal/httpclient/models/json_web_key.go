@@ -46,10 +46,10 @@ type JSONWebKey struct {
 	K string `json:"k,omitempty"`
 
 	// The "kid" (key ID) parameter is used to match a specific key.  This
-	// is used, for instance, to choose among a set of keys within a JWK Set
+	// is used, for instance, to choose among a set of keys within a JWK MustSet
 	// during key rollover.  The structure of the "kid" value is
-	// unspecified.  When "kid" values are used within a JWK Set, different
-	// keys within the JWK Set SHOULD use distinct "kid" values.  (One
+	// unspecified.  When "kid" values are used within a JWK MustSet, different
+	// keys within the JWK MustSet SHOULD use distinct "kid" values.  (One
 	// example in which different keys might use the same "kid" value is if
 	// they have different "kty" (key type) values but are considered to be
 	// equivalent alternatives by the application using them.)  The "kid"

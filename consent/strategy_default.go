@@ -229,7 +229,7 @@ func (s *DefaultStrategy) forwardAuthenticationRequest(w http.ResponseWriter, r 
 		return errorsx.WithStack(fosite.ErrLoginRequired.WithHint(`Prompt 'none' was requested, but no existing login session was found.`))
 	}
 
-	// Set up csrf/challenge/verifier values
+	// MustSet up csrf/challenge/verifier values
 	verifier := strings.Replace(uuid.New(), "-", "", -1)
 	challenge := strings.Replace(uuid.New(), "-", "", -1)
 	csrf := strings.Replace(uuid.New(), "-", "", -1)
@@ -258,7 +258,7 @@ func (s *DefaultStrategy) forwardAuthenticationRequest(w http.ResponseWriter, r 
 		}
 	}
 
-	// Set the session
+	// MustSet the session
 	if err := s.r.ConsentManager().CreateLoginRequest(
 		r.Context(),
 		&LoginRequest{
@@ -544,7 +544,7 @@ func (s *DefaultStrategy) forwardConsentRequest(w http.ResponseWriter, r *http.R
 		return errorsx.WithStack(fosite.ErrConsentRequired.WithHint(`Prompt 'none' was requested, but no previous consent was found.`))
 	}
 
-	// Set up csrf/challenge/verifier values
+	// MustSet up csrf/challenge/verifier values
 	verifier := strings.Replace(uuid.New(), "-", "", -1)
 	challenge := strings.Replace(uuid.New(), "-", "", -1)
 	csrf := strings.Replace(uuid.New(), "-", "", -1)

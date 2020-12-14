@@ -142,11 +142,11 @@ func (h *Handler) GetKey(w http.ResponseWriter, r *http.Request, ps httprouter.P
 
 // swagger:route GET /keys/{set} admin getJsonWebKeySet
 //
-// Retrieve a JSON Web Key Set
+// Retrieve a JSON Web Key MustSet
 //
 // This endpoint can be used to retrieve JWK Sets stored in ORY Hydra.
 //
-// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
+// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK MustSet is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 //
 //     Consumes:
 //     - application/json
@@ -177,9 +177,9 @@ func (h *Handler) GetKeySet(w http.ResponseWriter, r *http.Request, ps httproute
 //
 // Generate a New JSON Web Key
 //
-// This endpoint is capable of generating JSON Web Key Sets for you. There a different strategies available, such as symmetric cryptographic keys (HS256, HS512) and asymetric cryptographic keys (RS256, ECDSA). If the specified JSON Web Key Set does not exist, it will be created.
+// This endpoint is capable of generating JSON Web Key Sets for you. There a different strategies available, such as symmetric cryptographic keys (HS256, HS512) and asymetric cryptographic keys (RS256, ECDSA). If the specified JSON Web Key MustSet does not exist, it will be created.
 //
-// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
+// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK MustSet is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 //
 //     Consumes:
 //     - application/json
@@ -224,11 +224,11 @@ func (h *Handler) Create(w http.ResponseWriter, r *http.Request, ps httprouter.P
 
 // swagger:route PUT /keys/{set} admin updateJsonWebKeySet
 //
-// Update a JSON Web Key Set
+// Update a JSON Web Key MustSet
 //
 // Use this method if you do not want to let Hydra generate the JWKs for you, but instead save your own.
 //
-// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
+// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK MustSet is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 //
 //     Consumes:
 //     - application/json
@@ -271,7 +271,7 @@ func (h *Handler) UpdateKeySet(w http.ResponseWriter, r *http.Request, ps httpro
 //
 // Use this method if you do not want to let Hydra generate the JWKs for you, but instead save your own.
 //
-// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
+// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK MustSet is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 //
 //     Consumes:
 //     - application/json
@@ -310,11 +310,11 @@ func (h *Handler) UpdateKey(w http.ResponseWriter, r *http.Request, ps httproute
 
 // swagger:route DELETE /keys/{set} admin deleteJsonWebKeySet
 //
-// Delete a JSON Web Key Set
+// Delete a JSON Web Key MustSet
 //
-// Use this endpoint to delete a complete JSON Web Key Set and all the keys in that set.
+// Use this endpoint to delete a complete JSON Web Key MustSet and all the keys in that set.
 //
-// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
+// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK MustSet is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 //
 //     Consumes:
 //     - application/json
@@ -346,7 +346,7 @@ func (h *Handler) DeleteKeySet(w http.ResponseWriter, r *http.Request, ps httpro
 //
 // Use this endpoint to delete a single JSON Web Key.
 //
-// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
+// A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK MustSet is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 //
 //     Consumes:
 //     - application/json

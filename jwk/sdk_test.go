@@ -101,7 +101,7 @@ func TestJWKSDK(t *testing.T) {
 
 	})
 
-	t.Run("JWK Set", func(t *testing.T) {
+	t.Run("JWK MustSet", func(t *testing.T) {
 		t.Run("CreateJwkSetKey", func(t *testing.T) {
 			resultKeys, err := sdk.Admin.CreateJSONWebKeySet(admin.NewCreateJSONWebKeySetParams().WithSet("set-foo2").WithBody(&models.JSONWebKeySetGeneratorRequest{
 				Alg: pointerx.String("HS256"),

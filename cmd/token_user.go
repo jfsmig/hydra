@@ -274,8 +274,8 @@ func init() {
 	tokenUserCmd.Flags().Bool("no-open", false, "Do not open the browser window automatically")
 	tokenUserCmd.Flags().IntP("port", "p", 4446, "The port on which the server should run")
 	tokenUserCmd.Flags().StringSlice("scope", []string{"offline", "openid"}, "Request OAuth2 scope")
-	tokenUserCmd.Flags().StringSlice("prompt", []string{}, "Set the OpenID Connect prompt parameter")
-	tokenUserCmd.Flags().Int("max-age", 0, "Set the OpenID Connect max_age parameter")
+	tokenUserCmd.Flags().StringSlice("prompt", []string{}, "MustSet the OpenID Connect prompt parameter")
+	tokenUserCmd.Flags().Int("max-age", 0, "MustSet the OpenID Connect max_age parameter")
 
 	tokenUserCmd.Flags().String("client-id", os.Getenv("OAUTH2_CLIENT_ID"), "Use the provided OAuth 2.0 Client ID, defaults to environment variable OAUTH2_CLIENT_ID")
 	tokenUserCmd.Flags().String("client-secret", os.Getenv("OAUTH2_CLIENT_SECRET"), "Use the provided OAuth 2.0 Client Secret, defaults to environment variable OAUTH2_CLIENT_SECRET")
@@ -284,6 +284,6 @@ func init() {
 	tokenUserCmd.Flags().StringSlice("audience", []string{}, "Request a specific OAuth 2.0 Access Token Audience")
 	tokenUserCmd.Flags().String("auth-url", "", "Usually it is enough to specify the `endpoint` flag, but if you want to force the authorization url, use this flag")
 	tokenUserCmd.Flags().String("token-url", "", "Usually it is enough to specify the `endpoint` flag, but if you want to force the token url, use this flag")
-	tokenUserCmd.Flags().String("endpoint", os.Getenv("HYDRA_URL"), "Set the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_URL")
+	tokenUserCmd.Flags().String("endpoint", os.Getenv("HYDRA_URL"), "MustSet the URL where ORY Hydra is hosted, defaults to environment variable HYDRA_URL")
 	tokenUserCmd.Flags().Bool("https", false, "Sets up HTTPS for the endpoint using a self-signed certificate which is re-generated every time you start this command")
 }
